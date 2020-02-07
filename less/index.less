@@ -54,6 +54,163 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	width: 800px;
+	margin: 0 auto;
 }
 
+@media (max-width: 500px) {
+	html, body {
+		width: 100%;
+	}
+}
+
+h1 {
+	font-size: 2.7em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+//Variables
+@links: gray;
+
+@links-hover: darken(@links, 15%);
+
+@backgroundmain: lightgray;
+
+@margincenter: 5%;
+
+@tableborder: 1px solid black;
+
+//mix-ins
+.display {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+//Formatting?
+
+nav {
+	text-align: right;
+}
+
+	nav a{
+		padding-top: 10px;
+		text-decoration: none;
+		color: @links;
+		&:hover {
+			color: @links-hover
+		}
+	}
+
+.Main {
+	background-color: @backgroundmain;
+	margin-top: @margincenter;
+	
+	.image-ct {
+	// border: 2px solid green;
+	width: 50%;
+	height: 20rem;
+	
+		.image1 {
+			margin-left: 10%;
+			width: 50%;
+			// overflow: hidden;
+		} //image1
+	} //.image-ct
+
+	.center-content {
+		// border-top: 1px solid black;
+		margin-top: 5%;
+		padding-left: 4%;
+		h1 {
+			padding-bottom: 2%;
+			@media (max-width: 500px){
+				font-size: 1.5rem;
+			}
+		}//h1 
+		.intro {
+			border-top: 1px solid black;
+			width: 95%;
+			padding-top: 5%;
+			padding-bottom: 10%;
+		}//.intro
+	}//.center-content
+
+	@media (max-width: 500px){
+		width: 75%;
+		margin-left: 13%;
+		padding-top: 10%;
+		.image-ct {
+			display: none;
+		}
+		.image1 {
+			display: none;
+		}
+	}
+}
+
+.sam {
+	display: flex;
+	margin-top: 5%;
+	div {
+		// border: 2px solid goldenrod;
+		width: 50%;
+	}
+	h2 {
+		margin-bottom: 2%;
+	}
+	.bottom-content2 {
+		margin-left: 15%;
+	}
+	@media (max-width: 500px){
+		.column;
+		width: 75%;
+		margin-left: 15%;		
+		div {
+			width: 100%;
+			text-align: center;
+		}
+		.bottom-content2 {
+			margin-top: 5%;
+			margin-left: 0%;
+			padding-top: 5%;
+			border-top: 1px solid black;
+			// text-align: center;
+		}
+	}	
+}
+
+.table-spot {
+	margin-top: 5%;
+	// border: 2px solid orange;
+	table {
+		width: 100%;
+		border-top: @tableborder;
+		text-align: center;
+		margin-top: 5%;
+		th {
+			border-top: @tableborder;
+			font-weight: 800;
+			padding: 2% 0%;
+		}
+		td {
+			border-top: @tableborder;
+			padding: 2% 0%;
+		}
+	}
+	@media (max-width: 500px){
+		width: 70%;
+		margin-left: 14%;
+	}
+}
+
+footer {
+	margin-top: 2% 0%;
+	text-align: center;
+}
